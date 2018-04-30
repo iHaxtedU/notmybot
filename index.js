@@ -59,7 +59,8 @@ try{
     .addField("Reason For Kick", kReason)
      .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`);
     
-    (kUser).send(kickEmbed).then(kUser).kick(5000)
+    (kUser).send(kickEmbed)
+    (kUser.kick
  
   }
     if(cmd === `${prefix}verify`){
