@@ -60,7 +60,7 @@ try{
      .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`);
     
     (kUser).send(kickEmbed)
-    (kUser.kick
+    (kUser).kick
  
   }
     if(cmd === `${prefix}verify`){
