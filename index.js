@@ -131,7 +131,8 @@ message.author.send(`Here is the current coin file`, {
     "./Tokens.json"
   ]
 })}
-  message.channel.send("Only Ez Potato Has This Permission");
+ let blacklist = (message.author.id === "366054247185514516");
+    if (!blacklist) return message.channel.send("This command is for Ez Potato only.")
 }
 
   });
