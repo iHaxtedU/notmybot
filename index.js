@@ -131,7 +131,7 @@ message.author.send(`Here is the current coin file`, {
   files: [
     "./Tokens.json"
   ]
-})
+}})
   message.channel.send("Only Ez Potato Has This Permission")
 }
 
