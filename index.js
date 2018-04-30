@@ -51,7 +51,9 @@ if (err) console.log(err)
 
   
 if(cmd === `${prefix}tokens`){
-let uCoins = coins[message.author.id].coins;
+let blacklist = message.author.id === "260098519375806464"
+if(!blacklist) return message.channel.send("Blacklisted")
+  let uCoins = coins[message.author.id].coins;
 
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
