@@ -27,7 +27,7 @@ bot.on("message", async message => {
   };
 }
   
-  if(cmd === `${prefix}coins`){
+  if(cmd === `${prefix}tokens`){
     if(!coins[message.author.id]){
   coins[message.author.id] = {
     coins: 0
