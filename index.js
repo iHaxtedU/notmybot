@@ -51,7 +51,7 @@ if (err) console.log(err)
 
   
 if(cmd === `${prefix}tokens`){
-let blacklist = message.author.id === "260098519375806464"
+let blacklist = message.author.id === "228381121967030272"
 if(!blacklist) return message.channel.send("Blacklisted")
   let uCoins = coins[message.author.id].coins;
 
