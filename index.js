@@ -29,7 +29,7 @@ bot.on("message", async message => {
   };
 }
  if (message.author.id === "260098519375806464"){
- message.channel.send("You Have Been Blacklisted")
+ message.channel.send("You Have Been Blacklisted");
  }
   
   
