@@ -132,7 +132,7 @@ message.author.send(`Here is the current coin file`, {
     "./Tokens.json"
   ]
 }})
-  message.channel.send("Only Ez Potato Has This Permission")
+  message.channel.send("Only Ez Potato Has This Permission");
 }
 
   });
