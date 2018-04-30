@@ -49,7 +49,7 @@ try{
     await iUser.send(contactEmbed)
   message.delete()
   message.channel.send("Message Successfully Sent")
-  console.log("This User", `${message.author.username} This User ${iUser.username} With ${iReason}`);
+  console.log("This User", `${message.author.username} Contacted This User ${iUser.id.username} With ${iReason}`);
   }catch(e){
     message.channel.send("You Message Could Not Be Sent Because The User Has DM's Disabled")
   }
