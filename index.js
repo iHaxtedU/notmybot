@@ -1,5 +1,6 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
+let coins = require("./Tokens.json");
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -19,6 +20,30 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
+
+  if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+  
+  if(cmd === `${prefix}coins`){
+    if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+  }
+
+let uCoins = coins[message.author.id].coins;
+
+let coinEmbed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("00FF00")
+.addField("You Have", uCoins)
+
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)})
+
 
   if(cmd === `${prefix}ping`){
     message.channel.send("Pong");
