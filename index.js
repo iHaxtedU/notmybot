@@ -34,7 +34,7 @@ if(cmd === `${prefix}givetokens`){
     coins: coins(user).coins + Reason
   };
 fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-if (err) console.log(err)};
+if (err) console.log(err))};
   
 if(cmd === `${prefix}tokens`){
 if(!coins[message.author.id]){
