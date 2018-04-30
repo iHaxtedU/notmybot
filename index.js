@@ -62,7 +62,7 @@ try{
 let iRole = message.guild.roles.find(`name`, "Guests");
     let lRole = message.guild.roles.find(`name`, "Unverified");
     
- message(.addRole(iRole.id);
+ message.member.addRole(iRole.id);
     message.member.removeRole(lRole.id);
     message.delete()
   }
