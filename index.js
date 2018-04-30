@@ -52,11 +52,15 @@ try{
     let kReason = args.join(" ").slice(22);
   if(!kReason) return message.channel.send("Please include a reason.")
     if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You Do Not Have This Permission");
-    let gRole = message.guild.roles.find(`name`, "Guests");
-    let rRole = message.guild.roles.find(`name`, "Unverified");
+
+    let kickEmbed = new Discord.RichEmbed()
+    .setDescription("You Were Kicked")
+    .setColor("#00FF00")
+    .addField("Reason For Kick", kReason)
+     .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`);
     
-     (kUser).addRole(rRole.id);
-    (kUser).removeRole(gRole.id);
+    (kUser).send(kickEmbed).then(kUser).kick(5000)
+ 
   }
     if(cmd === `${prefix}verify`){
 let iRole = message.guild.roles.find(`name`, "Guests");
