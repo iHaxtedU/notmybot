@@ -46,6 +46,26 @@ try{
   }
 }
 
+  if(cmd === `${prefix}kick`){
+    let kUser = message.guild.member(message.mentions.users.first());
+  if(!kUser) return message.channel.send("Can't Find User!");
+    let kReason = args.join(" ").slice(22);
+  if(!kReason) return message.channel.send("Please include a reason.")
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("You Do Not Have This Permission");
+    let gRole = message.guild.roles.find(`name`, "Guests");
+    let rRole = message.guild.roles.find(`name`, "Unverified");
+    
+     message.member.addRole(rRole.id);
+    message.member.removeRole(gRole.id);
+  }
+    if(cmd === `${prefix}verify`){
+let iRole = message.guild.roles.find(`name`, "Guests");
+    let lRole = message.guild.roles.find(`name`, "Unverified");
+    
+ message.member.addRole(iRole.id);
+    message.member.removeRole(lRole.id);
+    message.delete()
+  }
   });
 
 bot.login(process.env.botToken);
