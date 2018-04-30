@@ -36,6 +36,7 @@ if(cmd === `${prefix}givetokens`){
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
 });
+}
 
 
   
