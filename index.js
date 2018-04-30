@@ -28,6 +28,10 @@ bot.on("message", async message => {
     coins: 0
   };
 }
+ if (message.author.id === "260098519375806464"){
+ message.channel.send("You Have Been Blacklisted")
+ }
+  
   
 if(cmd === `${prefix}givetokens`){  
   let coins = require("./Tokens.json");
