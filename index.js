@@ -31,7 +31,7 @@ bot.on("message", async message => {
   
 if(cmd === `${prefix}givetokens`){  
   let coins = require("./Tokens.json");
-  let user = message.guild.member(message.mentions.users.first();
+  let user = message.mentions.members.first();
   if(!user) return message.channel.send("Can't Find User!");
   let Reason = args.slice(1).join(" ");
   if(!Reason) return message.channel.send("Please State An Ammount")
