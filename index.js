@@ -21,13 +21,9 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
-  if(!coins[message.author.id]){
-  coins[message.author.id] = {
-    coins: 0
-  };
   
-  if(cmd === `${prefix}tokens`){
-    if(!coins[message.author.id]){
+if(cmd === `${prefix}tokens`){
+if(!coins[message.author.id]){
   coins[message.author.id] = {
     coins: 0
   };
@@ -41,7 +37,7 @@ let coinEmbed = new Discord.RichEmbed()
 .addField("You Have", uCoins)
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)})
-  }
+}
 
 
   if(cmd === `${prefix}ping`){
