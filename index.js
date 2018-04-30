@@ -65,6 +65,7 @@ try{
   message.channel.send("Kick Success")
   }catch(e){
     message.channel.send("Failed")
+  }
  
   }
     if(cmd === `${prefix}verify`){
