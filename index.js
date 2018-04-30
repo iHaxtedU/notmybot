@@ -25,6 +25,6 @@ bot.on("message", async message => {
 
   }
 
-  }
+  });
 
-bot.login(process.env.botToken)
+bot.login(process.env.botToken);
