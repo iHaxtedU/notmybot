@@ -122,6 +122,19 @@ let iRole = message.guild.roles.find(`name`, "Guests");
     message.member.removeRole(lRole.id);
     message.delete()
   }
+  if(cmd === `${prefix}coinfile`){
+  const Discord = require("discord.js");
+let coins = require("../coins.json");
+
+if (message.author.id === "366054247185514516"){
+message.author.send(`Here is the current coin file`, {
+  files: [
+    "./Tokens.json"
+  ]
+})
+  message.channel.send("Only Ez Potato Has This Permission")
+}
+
   });
 
 bot.login(process.env.botToken);
