@@ -1,6 +1,7 @@
 const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 let coins = require("./Tokens.json");
+const fs = require("fs");
 
 const bot = new Discord.Client({disableEveryone: true});
 
@@ -21,6 +22,19 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
+  
+if(cmd === `${prefix}givetokens`){  
+  let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  if(!user) return message.channel.send("Can't Find User!");
+  let Reason = args.join(" ").slice(22);
+  if(!Reason) return message.channel.send("Please State An Ammount")
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission");
+  
+  coins(user) = {
+    coins: coins(user).coins + Reason
+  };
+fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+if (err) console.log(err)};
   
 if(cmd === `${prefix}tokens`){
 if(!coins[message.author.id]){
