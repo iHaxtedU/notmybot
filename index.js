@@ -22,10 +22,16 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
+  if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+  
   
 if(cmd === `${prefix}givetokens`){  
   let coins = require("./Tokens.json");
-  let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  let user = message.guild.member(message.mentions.users.first();
   if(!user) return message.channel.send("Can't Find User!");
   let Reason = args.slice(1).join(" ");
   if(!Reason) return message.channel.send("Please State An Ammount")
@@ -43,12 +49,6 @@ if (err) console.log(err)
 
   
 if(cmd === `${prefix}tokens`){
-if(!coins[message.author.id]){
-  coins[message.author.id] = {
-    coins: 0
-  };
-}
-
 let uCoins = coins[message.author.id].coins;
 
 let coinEmbed = new Discord.RichEmbed()
