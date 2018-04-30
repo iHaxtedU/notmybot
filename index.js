@@ -30,9 +30,10 @@ if(cmd === `${prefix}givetokens`){
   let Reason = args.join(" ").slice(22);
   if(!Reason) return message.channel.send("Please State An Ammount")
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
+  const fs = require("fs");
   
-  coins(user.id) = {
-    coins: coins(user.id).coins + Reason
+  coins[user.id] = {
+    coins: coins[user.id].coins + Reason
   };
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
