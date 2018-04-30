@@ -31,8 +31,8 @@ if(cmd === `${prefix}givetokens`){
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
   let coins = require("./Tokens.json");
   
-  coins(user) = {
-    coins: coins(user).coins + Reason
+  coins[user.id] = {
+    coins: coins[user.id].coins + Reason
   };
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
