@@ -38,6 +38,7 @@ if(cmd === `${prefix}givetokens`){
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
   const fs = require("fs");
   
+  console.log(Reason)
   coins[user.id] = {
     coins: coins[user.id].coins + Reason
   };
