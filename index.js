@@ -35,7 +35,7 @@ if(cmd === `${prefix}givetokens`){
   };
 fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)};
-             }
+)}
   
 if(cmd === `${prefix}tokens`){
 if(!coins[message.author.id]){
