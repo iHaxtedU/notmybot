@@ -25,7 +25,7 @@ bot.on("message", async message => {
 
   }
   if(cmd === `${prefix}contact`){
-   let iUser = message.guild.member(message.mentions.users.first()
+   let iUser = message.guild.member(message.mentions.users.first();
   if(!iUser) return message.channel.send("Can't Find User!");
   let iReason = args.join(" ").slice(22);
   let msg = ("You Were Called To Encry For...");
