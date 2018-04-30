@@ -25,4 +25,4 @@ bot.on("message", async message => {
   }
   }
 
-bot.login(process.env.botToken).catch(err => console.log(err));
+bot.login(process.env.botToken)
