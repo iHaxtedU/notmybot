@@ -33,9 +33,9 @@ if(cmd === `${prefix}givetokens`){
   coins(user) = {
     coins: coins(user).coins + Reason
   };
-fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
+fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
-};
+});
 
 
   
