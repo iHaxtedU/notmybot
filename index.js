@@ -22,32 +22,6 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   let coins = require("./Tokens.json");
-  
-  if(!coins[message.author.id]){
-  coins[message.author.id] = {
-    coins: 0
-  };
-}
-  
-  
-if(cmd === `${prefix}givetokens`){  
-  let coins = require("./Tokens.json");
-  let user = message.mentions.members.first();
-  if(!user) return message.channel.send("Can't Find User!");
-  let Reason = args.slice(1).join(" ");
-  if(!Reason) return message.channel.send("Please Insert An Ammount")
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
-  const fs = require("fs");
-  
-  console.log(Reason)
-  coins[user.id] = {
-    coins: coins[user.id].coins + Reason
-  };
-fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
-if (err) console.log(err)
-});
-}
-
 
   
 if(cmd === `${prefix}tokens`){
