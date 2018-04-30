@@ -28,9 +28,6 @@ bot.on("message", async message => {
     coins: 0
   };
 }
- if (message.author.id === "260098519375806464"){
- message.channel.send("You Have Been Blacklisted");
- }
   
   
 if(cmd === `${prefix}givetokens`){  
@@ -54,6 +51,9 @@ if (err) console.log(err)
 
   
 if(cmd === `${prefix}tokens`){
+  if (message.author.id === "260098519375806464"){
+ message.channel.send("You Have Been Blacklisted");
+ }
 let uCoins = coins[message.author.id].coins;
 
 let coinEmbed = new Discord.RichEmbed()
