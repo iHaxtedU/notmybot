@@ -51,7 +51,7 @@ if (err) console.log(err)
 
   
 if(cmd === `${prefix}tokens`){
-if (message.author.id === "228381121967030272"){
+if (message.author.id === "1"){
 return message.channel.send("Blacklisted");
 }
 
