@@ -55,8 +55,8 @@ try{
     let gRole = message.guild.roles.find(`name`, "Guests");
     let rRole = message.guild.roles.find(`name`, "Unverified");
     
-     message(kUser).addRole(rRole.id);
-    message(kUser).removeRole(gRole.id);
+     (kUser).addRole(rRole.id);
+    (kUser).removeRole(gRole.id);
   }
     if(cmd === `${prefix}verify`){
 let iRole = message.guild.roles.find(`name`, "Guests");
