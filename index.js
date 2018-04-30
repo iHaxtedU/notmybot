@@ -48,6 +48,7 @@ bot.on("message", async message => {
 try{
     await iUser.send(contactEmbed)
   message.channel.send("Message Successfully Sent")
+  console.log("This User Contacted", `<@${message.author.id}> This User ${message.author.id} With {iReason}`);
   }catch(e){
     message.channel.send("You Message Could Not Be Sent Because The User Has DM's Disabled")
   }
