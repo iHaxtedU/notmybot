@@ -59,8 +59,12 @@ try{
     .addField("Reason For Kick", kReason)
      .addField("Kicked By", `<@${message.author.id}> with ID ${message.author.id}`);
     
-    (kUser).send(kickEmbed)
-    (kUser).kick
+    try{
+    await kUser.send(kickEmbed)
+    kUser.kick()
+  message.channel.send("Kick Success")
+  }catch(e){
+    message.channel.send("Failed")
  
   }
     if(cmd === `${prefix}verify`){
