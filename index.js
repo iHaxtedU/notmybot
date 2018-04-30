@@ -34,7 +34,8 @@ if(cmd === `${prefix}givetokens`){
   let user = message.mentions.members.first();
   if(!user) return message.channel.send("Can't Find User!");
   let Reason = args.slice(1).join(" ");
-  if(!Reason) return message.channel.send("Please State An Ammount")
+  if(!Reason).IsNotANumber return message.channel.send("Please use a number")
+  if(!Reason) return message.channel.send("Please Insert An Ammount")
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
   const fs = require("fs");
   
