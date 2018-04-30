@@ -22,23 +22,6 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  
-if(cmd === `${prefix}tokens`){
-if (message.author.id === "1"){
-return message.channel.send("Blacklisted");
-}
-
-  let uCoins = coins[message.author.id].coins;
-
-let coinEmbed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("00FF00")
-.addField("You Have", uCoins)
-
-message.channel.send(coinEmbed).then(msg => {msg.delete(5000)})
-}
-
-
   if(cmd === `${prefix}pingme`){
     message.channel.send("Pong");
 
