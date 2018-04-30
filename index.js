@@ -28,6 +28,7 @@ bot.on("message", async message => {
    let iUser = message.guild.member(message.mentions.users.first());
   if(!iUser) return message.channel.send("Can't Find User!");
   let iReason = args.join(" ").slice(22);
+  if(!iReason) return message.channel.send("Please include a reason.")
   let msg = ("You Were Called To Encry For...");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
 
