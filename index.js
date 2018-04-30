@@ -27,7 +27,7 @@ if(cmd === `${prefix}givetokens`){
   let coins = require("./Tokens.json");
   let user = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!user) return message.channel.send("Can't Find User!");
-  let Reason = args.join(" ").slice(22);
+  let Reason = args.slice(1).join(" ");
   if(!Reason) return message.channel.send("Please State An Ammount")
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
   const fs = require("fs");
