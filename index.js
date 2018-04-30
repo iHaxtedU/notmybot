@@ -23,6 +23,12 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   let coins = require("./Tokens.json");
   
+  if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+  
 if(cmd === `${prefix}givetokens`){  
   let coins = require("./Tokens.json");
   let user = message.mentions.members.first();
