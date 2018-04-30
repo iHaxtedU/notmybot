@@ -51,6 +51,7 @@ try{
   message.channel.send("Message Successfully Sent")
   console.log("This User", `${message.author.username} Contacted This User ${iUser} With ${iReason}`);
   }catch(e){
+    message.delete()
     message.channel.send("You Message Could Not Be Sent Because The User Has DM's Disabled")
   }
 }
