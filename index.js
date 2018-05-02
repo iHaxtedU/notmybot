@@ -32,27 +32,6 @@ bot.on("message", async message => {
 
   }
   
-  if(cmd === `${prefix}givetokens`){
-  let User = message.mentions.users.first();
-  if(!User) return message.channel.send("Can't Find User!");
-  let ammount = args.join(" ").slice(22);
-  if (!ammount.isNaN()) return message.channel.send("Please use a number");
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
-    
-    
-
-let coinAmt = Math.floor(Math.random() * 1) + 1;
-let baseAmt = Math.floor(Math.random() * 1) + 1;
-
-if(coinAmt === baseAmt){
-  coins[message.author.id] = {
-    coins: coins[message.author.id].coins + 
-  };
-fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-if (err) console.log(err)
-});
-}
-  
   if(cmd === `${prefix}contact`){
    let iUser = message.guild.member(message.mentions.users.first());
   if(!iUser) return message.channel.send("Can't Find User!");
