@@ -35,7 +35,7 @@ bot.on("message", async message => {
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
   let Reason = args.join(" ").slice(22);
-  if (!Reason) return message.channel.send("Please state an ammount");
+  if (isNaN(Reason)) return message.channel.send("Please state an ammount");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
     
     message.channel.send("Yay");
@@ -43,10 +43,10 @@ bot.on("message", async message => {
     
     
   if(cmd === `${prefix}contact`){
-   let iUser = message.guild.member(message.mentions.users.first());
+  let iUser = message.guild.member(message.mentions.users.first());
   if(!iUser) return message.channel.send("Can't Find User!");
   let iReason = args.join(" ").slice(22);
-  if(!iReason) return message.channel.send("Please include a reason.")
+  if(!iReason) return message.channel.send("Please include a reason.");
   let msg = ("You Were Called To Encry For...");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
 
