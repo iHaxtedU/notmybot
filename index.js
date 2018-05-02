@@ -36,7 +36,7 @@ bot.on("message", async message => {
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
   let ammount = args.join(" ").slice(22);
-  if (!ammount) isNan() return message.channel.send("Please use a number");
+  if (!ammount.isNaN()) return message.channel.send("Please use a number");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
     
     
