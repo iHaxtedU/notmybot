@@ -35,7 +35,7 @@ bot.on("message", async message => {
   let User = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!User) return message.channel.send("Can't Find User!");
   let Reason = args.join(" ").slice(22);
-  if (!Reason.isNan()) return message.channel.send("Please use a number");
+  if (!Reason.isNaN()) return message.channel.send("Please use a number");
   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
     
     message.channel.send("Yay");
