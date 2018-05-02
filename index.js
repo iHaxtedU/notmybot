@@ -37,7 +37,7 @@ bot.on("message", async message => {
   let Reason = args.join(" ").slice(22);
   if (!Reason) return message.channel.send("Please State An Ammout");
   if (isNaN(Reason)) return message.channel.send("Please use a number");
-  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Do Not Have This Permission");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission");
     
     message.channel.send("Yay");
   }
