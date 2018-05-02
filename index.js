@@ -37,6 +37,7 @@ bot.on("message", async message => {
     coins: 0
   };
 }
+}
 
 let coins = require("./Tokens.json");
 let uCoins = coins[message.author.id].coins;
