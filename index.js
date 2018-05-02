@@ -30,7 +30,16 @@ bot.on("message", async message => {
   if(cmd === `${prefix}pingme`){
     message.channel.send("Pong");
 }
-    
+     if(cmd === `${prefix}givetokens`){
+  let User = message.mentions.users.first();
+  if(!User) return message.channel.send("Can't Find User!");
+  let Reason = args.join(" ").slice(22);
+  if (!Reason) return message.channel.send("You Need An Ammount To Give Them :D");
+  if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
+  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission").then console.log(`${message.author.username} Tried To Give Himself Tokens`);
+       
+  message.channel.send("Yay");
+}
     
   if(cmd === `${prefix}contact`){
   let iUser = message.guild.member(message.mentions.users.first());
