@@ -30,28 +30,6 @@ bot.on("message", async message => {
   if(cmd === `${prefix}pingme`){
     message.channel.send("Pong");
 }
-  
-  if(cmd === `${prefix}givetokens`){
-  let User = message.mentions.users.first();
-  if(!User) return message.channel.send("Can't Find User!");
-  let Reason = args.join(" ").slice(22);
-  if (!Reason) return message.channel.send("Please State An Ammout");
-  if (isNaN(Reason)) return message.channel.send("Please use a number");
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission");
-  let coins = require("./Tokens.json");
-    
-  let coinAmt = Math.floor(Math.random() * 1) + 1;
-let baseAmt = Math.floor(Math.random() * 1) + 1;
-console.log(`${coinAmt} ; ${baseAmt}`);
-
-if(coinAmt === baseAmt){
-  coins[User.id] = {
-    coins: coins[User.id].coins + Reason
-  };
-fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
-if (err) console.log(err)
-});
-}
     
     
   if(cmd === `${prefix}contact`){
