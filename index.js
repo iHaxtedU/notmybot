@@ -31,7 +31,7 @@ bot.on("message", async message => {
     message.channel.send("Pong");
 }
   
-  if(cmd === `${prefix}pingme`){
+  if(cmd === `${prefix}givetokens`){
   let User = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!User) return message.channel.send("Can't Find User!");
   let Reason = args.join(" ").slice(22);
