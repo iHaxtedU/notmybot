@@ -55,7 +55,7 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
 
   if(cmd === `${prefix}pingme`){
-    message.channel.send("Pong");
+    message.channel.send(`Pong! \`${client.pings[0]}ms\``);
     }
   
      if(cmd === `${prefix}givetokens`){
