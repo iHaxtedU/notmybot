@@ -16,6 +16,7 @@ bot.on("ready", async () => {
 bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
+  let coins = require("./Tokens.json");
 
   if(!coins[message.author.id]){
   coins[message.author.id] = {
@@ -28,17 +29,18 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   
   if(cmd === `${prefix}tokens`){
-    let coins = require("./Tokens.json");
     const fs = require("fs");
     if(!coins[message.author.id]){
   coins[message.author.id] = {
     coins: 0
   };
 }
+ let uCoins = coins[message.author.id].coins
+
 let ccoinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("00FF00")
-.addField("Here's The Information You Requested.", `You Have ${coins[message.author.id].coins} Tokens`);
+.addField("Here's The Information You Requested.", `You Have ${uCoins} Tokens`);
     
 let cuser = message.mentions.users.first();
 let uCoins = coins[cuser.id].coins;
