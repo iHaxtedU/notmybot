@@ -38,7 +38,7 @@ bot.on("message", async message => {
 
 let cCoins = coins[message.author.id].coins;
 let ccEmbed = new Discord.RichEmbed()
-.setcolor("#00FF00")
+.setColor("#00FF00")
 .addField("You Have", `${cCoins} Tokens.`);
 
     
