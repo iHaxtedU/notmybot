@@ -37,11 +37,12 @@ bot.on("message", async message => {
 }
 
     
- let cCoins = coins[message.author.id].coins;
-let ccEmbed = new Discord.RichEmbed()
+ let lCoins = coins[message.author.id].coins;
+let clEmbed = new Discord.RichEmbed()
 .setColor("#00FF00")
 .addField("You Have ∞ Tokens.");
     
+let cCoins = coins[message.author.id].coins;
  let ccEmbed = new Discord.RichEmbed()
 .setColor("#00FF00")
 .addField("You Have", `${cCoins} Tokens.`);
@@ -50,7 +51,7 @@ let ccEmbed = new Discord.RichEmbed()
 let cuser = message.mentions.users.first();
 if (!cuser) return message.channel.send(ccEmbed)
 let uCoins = coins[cuser.id].coins;
-if(uCoins > 1000) message.channel.send(cCoins).then(msg => {msg.delete(5000)})
+if(uCoins > 1000) message.channel.send(lCoins).then(msg => {msg.delete(5000)})
 
 
 let coinEmbed = new Discord.RichEmbed()
