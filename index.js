@@ -57,7 +57,6 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   if (!Reason) return message.channel.send("You Need An Ammount To Give Them :D");
   if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
-  if(!message.member.hasPermission("ADMINISTRATOR")) console.log(`${message.author.username} Tried To Give Himself Tokens`);
        
 if(!coins[message.author.id]){
   coins[message.author.id] = {
