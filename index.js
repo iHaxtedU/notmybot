@@ -35,14 +35,14 @@ bot.on("message", async message => {
     coins: 0
   };
 }
-
-let cuser = message.mentions.users.first();
-let uCoins = coins[cuser.id].coins;
-if (!cuser) let ccoinEmbed = new Discord.RichEmbed()
+let ccoinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("00FF00")
 .addField("Here's The Information You Requested.", `You Have ${uCoins} Tokens`);
-
+    
+let cuser = message.mentions.users.first();
+let uCoins = coins[cuser.id].coins;
+if (!cuser) message.channel.send(ccoinEmbed)
 message.channel.send(ccoinEmbed).then(msg => {msg.delete(5000)});
 
 
