@@ -37,8 +37,9 @@ bot.on("message", async message => {
 }
 
 let cuser = message.mentions.users.first();
+if (!cuser) return message.channel.send("User Not Fond");
 let uCoins = coins[cuser.id].coins;
-if(!uCoins) cuser = coins[message.author.id].coins;
+
 
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
