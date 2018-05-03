@@ -36,7 +36,7 @@ bot.on("message", async message => {
   };
 }
 
-let cuser = message.mentions.member.first();
+let cuser = message.mentions.users.first();
 let uCoins = coins[cuser.id].coins;
 if(!uCoins) coins[message.author.id].coins;
 
