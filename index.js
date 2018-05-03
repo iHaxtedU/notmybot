@@ -47,8 +47,8 @@ let cCoins = coins[message.author.id].coins;
 .setColor("#00FF00")
 .addField("You Have", `${cCoins} Tokens.`);
 
-let uCoins = coins[cuser.id].coins;
 let cuser = message.mentions.users.first();
+let uCoins = coins[cuser.id].coins;
 if (!cuser){
   if(uCoins > 1000) message.channel.send(clEmbed).then(msg => {msg.delete(5000)})
   message.channel.send(ccEmbed);
