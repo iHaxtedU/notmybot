@@ -59,10 +59,10 @@ if (err) console.log(err)
 });
 }
   if(cmd === `${prefix}tokens`){
-if(!coins[message.author.id]){
-  coins[message.author.id] = {
+if(!coins[User.id]){
+  coins[User.id] = {
     coins: 0
-  };
+  }};
 }
 
 let uCoins = coins[message.author.id].coins;
