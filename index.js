@@ -35,12 +35,12 @@ bot.on("message", async message => {
     coins: 0
   };
 }
- let uCoins = coins[message.author.id].coins
+ let sCoins = coins[message.author.id].coins
 
 let ccoinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("00FF00")
-.addField("Here's The Information You Requested.", `You Have ${uCoins} Tokens`);
+.addField("Here's The Information You Requested.", `You Have ${sCoins} Tokens`);
     
 let cuser = message.mentions.users.first();
 let uCoins = coins[cuser.id].coins;
