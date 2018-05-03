@@ -210,7 +210,7 @@ message.author.send(`Here is the current coin file`, {
   }
 
   let sCoins = coins[message.author.id].coins;
-  let ll = args[1]
+  let ll = message.content.slice(prefix.length).trim().split(/ +/g);
 
 
   let sickEmbed = new Discord.RichEmbed()
