@@ -71,7 +71,7 @@ let baseAmt = Math.floor(Math.random() * 1) + 1;
 
 if(coinAmt === baseAmt){
   coins[User.id] = {
-    coins: coins[User.id].coins +  Reason
+    coins: coins[User.id].coins + coinAmt
   };
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
@@ -79,7 +79,7 @@ if (err) console.log(err)
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#0000FF")
-.addField("💰", `${Reason} coins added!`);
+.addField("💰", `${Reason} Tokens Added To ${User.username}'s Account!`);
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
@@ -113,7 +113,7 @@ if (err) console.log(err)
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#0000FF")
-.addField("💰", `${qReason} coins removed!`);
+.addField("💰", `${qReason} Tokens removed!`);
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
