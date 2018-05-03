@@ -41,24 +41,8 @@ bot.on("message", async message => {
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
   if(!message.member.hasPermission("ADMINISTRATOR")) console.log(`${message.author.username} Tried To Give Himself Tokens`);
        
-  if(!coins[message.author.id]){
-  coins[message.author.id] = {
-    coins: 0
-  };
-}
-
-let coinAmt = Math.floor(Math.random() * 1) + 1;
-let baseAmt = Math.floor(Math.random() * 1) + 1;
-console.log(`${coinAmt} ; ${baseAmt}`);
-
-if(coinAmt === baseAmt){
-  coins[message.author.id] = {
-    coins: coins[message.author.id].coins + coinAmt
-  };
-fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
-if (err) console.log(err)
-});
-}
+message.channel.send("Done");
+     }
     
   if(cmd === `${prefix}contact`){
   let iUser = message.guild.member(message.mentions.users.first());
