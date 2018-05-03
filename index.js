@@ -44,7 +44,7 @@ let uCoins = coins[cuser.id].coins;
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("00FF00")
-.addField("Here's The Information You Requested.", `The User Has ${uCoins} Coins!`);
+.addField("Here's The Information You Requested.", `The User Has ${uCoins} Tokens!`);
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
