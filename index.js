@@ -37,6 +37,7 @@ bot.on("message", async message => {
 }
     
 let cuser = message.mentions.users.first();
+if (!cuser) return message.channel.send("No")
 let uCoins = coins[cuser.id].coins;
 
 let coinEmbed = new Discord.RichEmbed()
