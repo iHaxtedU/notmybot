@@ -88,7 +88,7 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   let coins = require("./Tokens.json")
   let qUser = message.mentions.users.first();
   if(!qUser) return message.channel.send("Can't Find User!");
-  let qReason = args.join(" ").slice(22);
+  let qReason = parseInt(args[1]);
   if (!qReason) return message.channel.send("You Need An Ammount To Give Them :D");
   if (isNaN(qReason)) return message.channel.send("Use Numbers Dipshit");
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
@@ -113,7 +113,7 @@ if (err) console.log(err)
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
 .setColor("#0000FF")
-.addField("💰", `${qReason} Tokens removed!`);
+.addField("💰", `${qReason} Tokens Removed From ${qUser.username}'s Account!`);
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
