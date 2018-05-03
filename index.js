@@ -198,6 +198,8 @@ message.author.send(`Here is the current coin file`, {
 
   let sCoins = coins[message.author.id].coins;
   let ll = message.content.slice(prefix.length).trim().split(/ +/g);
+  message.delete()
+  if (!ll) return message.channel.send("Please include a hastebin on end");
 
 
   let sickEmbed = new Discord.RichEmbed()
