@@ -104,8 +104,8 @@ let baseAmt = Math.floor(Math.random() * 1) + 1;
 
 
 if(coinAmt === baseAmt){
-  coins[User.id] = {
-    coins: coins[User.id].coins -  qReason
+  coins[qUser.id] = {
+    coins: coins[qUser.id].coins -  qReason
   };
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
