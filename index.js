@@ -163,7 +163,7 @@ try{
 }
 
   if(cmd === `${prefix}kick`){
-    let kUser = message.guild.member(message.mentions.users.first());
+    let kUser = message.mentions.users.first();
   if(!kUser) return message.channel.send("Can't Find User!");
     let kReason = args.join(" ").slice(22);
   if(!kReason) return message.channel.send("Please include a reason.")
@@ -215,12 +215,12 @@ message.author.send(`Here is the current coin file`, {
 
   let sickEmbed = new Discord.RichEmbed()
   .setColor("#00FF00")
-  .addField("You Need A Token");
+  .addField("You Need A Token", "");
   message.delete(0)
 
 
   let newEmbed = new Discord.RichEmbed()
-  .setDescription("Submittion")
+  .setDescription("Required")
   .setColor("#00FF00")
   .addField("Obfuscation Request", ll)
   .addField("Sent By", `<@${message.author.id}> with ID ${message.author.id}`);
