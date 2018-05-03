@@ -54,6 +54,8 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
     }
   
      if(cmd === `${prefix}givetokens`){
+  let blacklist = (message.author.id === "355809153589182484", "366054247185514516");
+  if (!blacklist) return message.channel.send("Only Creators And Ez Potato Can Use This.")
   let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
@@ -87,6 +89,7 @@ let coinEmbed = new Discord.RichEmbed()
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
 }
+     }
        if(cmd === `${prefix}taketokens`){
   let coins = require("./Tokens.json")
   let qUser = message.mentions.users.first();
@@ -121,21 +124,6 @@ let coinEmbed = new Discord.RichEmbed()
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
 }
-  
-  if (cmd === `${prefix}test`){
-   let coins = require("./Tokens.json");
-   let sCoins = coins[message.author.id].coins;
-   if(sCoins < 01) return message.channel.send("You Need A Token");
-   let fs = require("fs");
-    
-      coins[message.author.id] = {
-    coins: coins[message.author.id].coins - 1
-      }
-    
-    fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
-if (err) console.log(err)
-}); 
-  }
     
   if(cmd === `${prefix}contact`){
   let iUser = message.guild.member(message.mentions.users.first());
