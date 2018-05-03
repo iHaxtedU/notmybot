@@ -204,6 +204,43 @@ message.author.send(`Here is the current coin file`, {
  let blacklist = (message.author.id === "366054247185514516");
     if (!blacklist) return message.channel.send("This command is for Ez Potato only.")
 }
+  if(cmd === `${prefix}obfuscate`){
+   if(!coins[message.author.id]){
+    return message.reply("You don't have any coins!")
+  }
+
+  let sCoins = coins[message.author.id].coins;
+  let ll = message.content
+
+
+  let sickEmbed = new Discord.RichEmbed()
+  .setColor("#00FF00")
+  .addField("You Need A Token");
+  message.delete(0)
+
+
+  let newEmbed = new Discord.RichEmbed()
+  .setDescription("Submittion")
+  .setColor("#00FF00")
+  .addField("Obfuscation Request", ll)
+  .addField("Sent By", `<@${message.author.id}> with ID ${message.author.id}`);
+
+  if(sCoins < 1) return message.channel.send(sickEmbed).then(msg => {msg.delete(5000)})
+
+  message.delete()
+
+    message.guild.channels.find("name", "obfuscate").send(newEmbed);
+
+    coins[message.author.id] = {
+      coins: sCoins - 1
+    }
+
+message.delete()
+
+fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
+    if(err) cosole.log(err)
+  });
+}
 
   });
 
