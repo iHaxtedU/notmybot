@@ -62,8 +62,8 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
        
-if(!coins[message.author.id]){
-  coins[message.author.id] = {
+if(!coins[User.id]){
+  coins[User.id] = {
     coins: 0
   };
 }
