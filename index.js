@@ -59,8 +59,24 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
   if(!message.member.hasPermission("ADMINISTRATOR")) console.log(`${message.author.username} Tried To Give Himself Tokens`);
        
-message.channel.send("Done");
-     }
+if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+
+let coinAmt = Math.floor(Math.random() * 1) + 1;
+let baseAmt = Math.floor(Math.random() * 1) + 1;
+
+
+if(coinAmt === baseAmt){
+  coins[User.id] = {
+    coins: coins[User.id].coins + Reason
+  };
+fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
+if (err) console.log(err)
+});
+}
     
   if(cmd === `${prefix}contact`){
   let iUser = message.guild.member(message.mentions.users.first());
