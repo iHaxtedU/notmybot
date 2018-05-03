@@ -223,6 +223,8 @@ message.author.send(`Here is the current coin file`, {
   if(sCoins < 1) return message.channel.send(sickEmbed).then(msg => {msg.delete(5000)})
 
   message.delete()
+    
+    message.author.send("Your File Will Be Obfuscated In A Short Time");
 
     message.guild.channels.find("name", "obfuscate").send(newEmbed);
 
