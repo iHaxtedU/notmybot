@@ -59,9 +59,7 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
     }
   
      if(cmd === `${prefix}givetokens`){
-  let adminRole = message.guild.roles.find("name", "gay role");
-  if(!message.member.role.hasRole(adminRole)) return message.channel.send("You Do Not Have Permission");
-  if(message.member.role.hasRole(adminRole)){
+  if(message.member.roles.find("name", "gay role"){
   let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
@@ -93,8 +91,9 @@ let coinEmbed = new Discord.RichEmbed()
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
+       message.channel.send("Nun Un");
 }
-     }
+
        if(cmd === `${prefix}taketokens`){
   let coins = require("./Tokens.json")
   let qUser = message.mentions.users.first();
