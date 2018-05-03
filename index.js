@@ -36,10 +36,10 @@ bot.on("message", async message => {
   };
 }
 
-let uCoins = coins[message.author.id].coins;
+let cCoins = coins[message.author.id].coins;
 let ccEmbed = new Discord.RichEmbed()
 .setcolor("#00FF00")
-.addField("You Have", `${uCoins} Tokens.`);
+.addField("You Have", `${cCoins} Tokens.`);
 
     
 let cuser = message.mentions.users.first();
