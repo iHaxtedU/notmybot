@@ -51,7 +51,7 @@ let cCoins = coins[message.author.id].coins;
 let cuser = message.mentions.users.first();
 if (!cuser) return message.channel.send(ccEmbed)
 let uCoins = coins[cuser.id].coins;
-if(uCoins > 1000) message.channel.send(lCoins).then(msg => {msg.delete(5000)})
+if(uCoins > 1000) message.channel.send(clEmbed).then(msg => {msg.delete(5000)})
 
 
 let coinEmbed = new Discord.RichEmbed()
