@@ -77,6 +77,19 @@ if (err) console.log(err)
 });
 }
 }
+  
+  if (cmd === `${prefix}test`){
+   let coins = require("./Tokens.json");
+   let sCoins = coins[message.author.id].coins;
+   if(sCoins < 01) return message.channel.send("You Need A Token");
+    
+      coins[message.author.id] = {
+    coins: coins[message.author.id].coins - 1
+    
+    fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
+if (err) console.log(err)
+}); 
+  }
     
   if(cmd === `${prefix}contact`){
   let iUser = message.guild.member(message.mentions.users.first());
