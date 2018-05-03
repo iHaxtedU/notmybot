@@ -35,19 +35,9 @@ bot.on("message", async message => {
     coins: 0
   };
 }
- let sCoins = coins[message.author.id].coins
-
-let ccoinEmbed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("00FF00")
-.addField("Here's The Information You Requested.", `You Have ${sCoins} Tokens`);
     
 let cuser = message.mentions.users.first();
 let uCoins = coins[cuser.id].coins;
-if (!cuser) message.channel.send(ccoinEmbed)
-message.channel.send(ccoinEmbed).then(msg => {msg.delete(5000)});
-
-
 
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
