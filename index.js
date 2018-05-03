@@ -31,6 +31,7 @@ bot.on("message", async message => {
     message.channel.send("Pong");
 }
      if(cmd === `${prefix}givetokens`){
+  let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
   let Reason = args.join(" ").slice(22);
@@ -41,6 +42,22 @@ bot.on("message", async message => {
        
   message.channel.send("Yay");
 }
+  if(cmd === `${prefix}tokens`){
+if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+
+let uCoins = coins[message.author.id].coins;
+
+let coinEmbed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("00FF00")
+.addField("You Have", uCoins);
+
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+  }
     
   if(cmd === `${prefix}contact`){
   let iUser = message.guild.member(message.mentions.users.first());
