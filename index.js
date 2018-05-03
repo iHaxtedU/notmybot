@@ -93,6 +93,7 @@ let coinEmbed = new Discord.RichEmbed()
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
 }
+     }
 
        if(cmd === `${prefix}taketokens`){
   let coins = require("./Tokens.json")
