@@ -60,8 +60,8 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   
      if(cmd === `${prefix}givetokens`){
   let adminRole = message.guild.roles.find("name", "gay role");
-  if(!message.member.role.has(adminRole)) return message.channel.send("You Do Not Have Permission");
-  if(message.member.role.has(adminRole)){
+  if(!message.member.role.hasRole(adminRole)) return message.channel.send("You Do Not Have Permission");
+  if(message.member.role.hasRole(adminRole)){
   let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
