@@ -43,7 +43,7 @@ let ccEmbed = new Discord.RichEmbed()
 
     
 let cuser = message.mentions.users.first();
-if (!cuser) return message.channel.send("No")
+if (!cuser) return message.channel.send(ccEmbed)
 let uCoins = coins[cuser.id].coins;
 
 let coinEmbed = new Discord.RichEmbed()
