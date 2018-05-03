@@ -215,7 +215,7 @@ message.author.send(`Here is the current coin file`, {
 
   let sickEmbed = new Discord.RichEmbed()
   .setColor("#00FF00")
-  .addField("You Need A Token", "");
+  .addField("You Need A Token", "You Need 1 Token");
   message.delete(0)
 
 
