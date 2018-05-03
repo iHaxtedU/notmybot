@@ -37,7 +37,12 @@ bot.on("message", async message => {
 }
 
 let cuser = message.mentions.users.first();
-if (!cuser) return message.channel.send("User Not Fond");
+if (!cuser) let coinEmbed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("00FF00")
+.addField("Here's The Information You Requested.", `The User Has ${uCoins} Tokens!`);
+
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 let uCoins = coins[cuser.id].coins;
 
 
