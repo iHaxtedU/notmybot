@@ -59,7 +59,8 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
     }
   
      if(cmd === `${prefix}givetokens`){
-  if(message.member.roles.find("name", "gay role"){
+   if(!message.member.roles.find("name", "gay role")) return message.channel.send("Don't Even Think About It");
+  if(message.member.roles.find("name", "gay role")){
   let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
@@ -91,7 +92,6 @@ let coinEmbed = new Discord.RichEmbed()
 
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
-       message.channel.send("Nun Un");
 }
 
        if(cmd === `${prefix}taketokens`){
