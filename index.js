@@ -59,15 +59,14 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
     }
   
      if(cmd === `${prefix}givetokens`){
-  let blacklist = (message.author.id === "355809153589182484", "366054247185514516");
-  if (!blacklist) return message.channel.send("Only Creators And Ez Potato Can Use This.")
+  let adminRole = message.guild.roles.find("name", "gay role");
+  if(message.member.roles.has(adminRole){
   let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
   let Reason = parseInt(args[1]);
   if (!Reason) return message.channel.send("You Need An Ammount To Give Them :D");
   if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
-  if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You Do Not Have This Permission")
        
 if(!coins[User.id]){
   coins[User.id] = {
