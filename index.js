@@ -211,7 +211,6 @@ message.author.send(`Here is the current coin file`, {
   let sickEmbed = new Discord.RichEmbed()
   .setColor("#00FF00")
   .addField("You Need A Token", "You Need 1 Token");
-  message.delete(0)
 
 
   let newEmbed = new Discord.RichEmbed()
@@ -232,7 +231,6 @@ message.author.send(`Here is the current coin file`, {
       coins: sCoins - 1
     }
 
-message.delete()
 
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
     if(err) cosole.log(err)
