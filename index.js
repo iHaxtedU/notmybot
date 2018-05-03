@@ -49,7 +49,7 @@ let cCoins = coins[message.author.id].coins;
 
     
 let cuser = message.mentions.users.first();
-if (!cuser) return message.channel.send(ccEmbed)
+if (!cuser) return message.channel.send(clEmbed)
 let uCoins = coins[cuser.id].coins;
 if(uCoins > 1000) message.channel.send(clEmbed).then(msg => {msg.delete(5000)})
 
