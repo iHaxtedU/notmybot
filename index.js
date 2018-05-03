@@ -29,6 +29,7 @@ bot.on("message", async message => {
   
   if(cmd === `${prefix}tokens`){
     let coins = require("./Tokens.json");
+    const fs = require("fs");
     if(!coins[message.author.id]){
   coins[message.author.id] = {
     coins: 0
@@ -86,6 +87,7 @@ if (err) console.log(err)
     
       coins[message.author.id] = {
     coins: coins[message.author.id].coins - 1
+      }
     
     fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
