@@ -35,6 +35,12 @@ bot.on("message", async message => {
     coins: 0
   };
 }
+
+let uCoins = coins[message.author.id].coins;
+let ccEmbed = new Discord.RichEmbed()
+.setcolor("#00FF00")
+.addField("You Have", `${uCoins} Tokens.`);
+
     
 let cuser = message.mentions.users.first();
 if (!cuser) return message.channel.send("No")
