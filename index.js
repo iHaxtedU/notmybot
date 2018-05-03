@@ -58,7 +58,8 @@ fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
 });
 }
-  if(cmd === `${prefix}tokens`){
+  
+if(cmd === `${prefix}tokens`){
 if(!coins[User.id]){
   coins[User.id] = {
     coins: 0
