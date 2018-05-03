@@ -82,6 +82,7 @@ if (err) console.log(err)
    let coins = require("./Tokens.json");
    let sCoins = coins[message.author.id].coins;
    if(sCoins < 01) return message.channel.send("You Need A Token");
+   let fs = require("fs");
     
       coins[message.author.id] = {
     coins: coins[message.author.id].coins - 1
