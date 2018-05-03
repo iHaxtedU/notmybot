@@ -38,7 +38,7 @@ bot.on("message", async message => {
 
 let cuser = message.mentions.users.first();
 let uCoins = coins[cuser.id].coins;
-if(!uCoins) coins[message.author.id].coins;
+if(!uCoins) cuser = coins[message.author.id].coins;
 
 let coinEmbed = new Discord.RichEmbed()
 .setAuthor(message.author.username)
