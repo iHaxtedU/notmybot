@@ -27,24 +27,6 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-  
-  if(cmd === `${prefix}tokens`){
-    const fs = require("fs");
-    if(!coins[message.author.id]){
-  coins[message.author.id] = {
-    coins: 0
-  };
-}
-
-
-let coins1 = coins[message.author.id].coins;
-
-let normCoins = new Discord.RichEmbed()
-.setColor("#00FF00")
-.addField("Tokens", `You Have ${coins1} Tokens`);
-    
-    message.channel.send(normCoins)
-}
 
 let coinAmt = Math.floor(Math.random() * 1) + 1;
 let baseAmt = Math.floor(Math.random() * 1) + 1;
