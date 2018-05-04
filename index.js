@@ -37,47 +37,13 @@ bot.on("message", async message => {
 }
 
 
-let lCoins = coins[message.author.id].coins;
-let uCoins = coins[cuser.id].coins;
+let coins1 = coins[message.author.id].coins;
 
-let normalCoins = new Discord.RichEmbed()
+let normCoins = new Discord.RichEmbed()
 .setColor("#00FF00")
-.addField("You Have", `${lCoins} Tokens!`);
-
-let unlimitedCoins = new Discord.RichEmbed()
-.setColor("#00FF00")
-.addField("You Have", "∞ Tokens!");
-
-let userCoins = new Discord.RichEmbed()
-.setColor("#00FF00")
-.addField("The User Has", `${uCoins} Tokens!`);
-
-let user1Coins = new Discord.RichEmbed()
-.setColor("#00FF00")
-.addField("The User Has", "∞ Tokens!");;
- 
-message.channel.send(normalCoins);
-}
-  }    
-
-  if(cmd === `${prefix}pingme`){
-    message.channel.send(`Pong! \`${bot.pings[0]}ms\``);
-    }
-  
-     if(cmd === `${prefix}givetokens`){
-   if(!message.member.roles.find("name", "gay role")) return message.channel.send("Don't Even Think About It");
-  if(message.member.roles.find("name", "gay role")){
-  let coins = require("./Tokens.json")
-  let User = message.mentions.users.first();
-  if(!User) return message.channel.send("Can't Find User!");
-  let Reason = parseInt(args[1]);
-  if (!Reason) return message.channel.send("You Need An Ammount To Give Them :D");
-  if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
-       
-if(!coins[User.id]){
-  coins[User.id] = {
-    coins: 0
-  };
+.addField("Tokens", `You Have ${coins1} Tokens`);
+    
+    message.channel.send(normCoins)
 }
 
 let coinAmt = Math.floor(Math.random() * 1) + 1;
