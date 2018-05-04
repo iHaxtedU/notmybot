@@ -28,6 +28,8 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
+ if(message.content.startsWith("!")) return message.channel.send("The Bot Is Currently Under Maitenance Please Wait");
+  
   if(cmd === `${prefix}tokens`){
     const fs = require("fs");
     if(!coins[message.author.id]){
