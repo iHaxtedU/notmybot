@@ -37,32 +37,32 @@ bot.on("message", async message => {
 }
 
     
- let lCoins = coins[message.author.id].coins;
-let clEmbed = new Discord.RichEmbed()
-.setColor("#00FF00")
-.addField("You Have", "∞ Tokens");
-    
-let cCoins = coins[message.author.id].coins;
- let ccEmbed = new Discord.RichEmbed()
-.setColor("#00FF00")
-.addField("You Have", `${cCoins} Tokens.`);
-
-let cuser = message.mentions.users.first();
+let lCoins = coins[message.author.id].coins;
+let coinUser = message.mention.member.first();
+let cuser = message.mentions.member.first();
 let uCoins = coins[cuser.id].coins;
-if (!cuser){
-  if(uCoins > 1000) message.channel.send(clEmbed).then(msg => {msg.delete(5000)})
-  message.channel.send(ccEmbed);
+
+let normalCoins = new Discord.RichEmbed()
+.setColor("#00FF00")
+.addField("You Have", `${lCoins} Tokens!`);
+
+let unlimitedCoins = new Discord.RichEmbed()
+.setColor("#00FF00")
+.addField("You Have", "∞ Tokens!");
+
+let userCoins = new Discord.RichEmbed()
+.setColor("#00FF00")
+.addField("The User Has", `${uCoins} Tokens!`);
+
+let user1Coins = new Discord.RichEmbed()
+.setColor("#00FF00")
+.addField("The User Has", "∞ Tokens!");;
+ 
+if(!cuser){
+if (uCoins > 1000) return message.channel.send(unlimitedCoins);
+message.channel.send(normalCoins);
 }
-if(uCoins > 1000) message.channel.send(clEmbed).then(msg => {msg.delete(5000)})
-
-
-let coinEmbed = new Discord.RichEmbed()
-.setAuthor(message.author.username)
-.setColor("00FF00")
-.addField("Here's The Information You Requested.", `The User Has ${uCoins} Tokens!`);
-
-message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
-}
+  }    
 
   if(cmd === `${prefix}pingme`){
     message.channel.send(`Pong! \`${bot.pings[0]}ms\``);
@@ -249,4 +249,4 @@ fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 
   });
 
-bot.lo(process.env.botToken);
+bot.login(process.env.botToken);
