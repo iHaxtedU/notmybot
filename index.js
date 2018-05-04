@@ -66,9 +66,10 @@ message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
   let coins = require("./Tokens.json")
   let User = message.mentions.users.first();
   if(!User) return message.channel.send("Can't Find User!");
-  let Reason = parseInt(args[1]);
+  let Reason = args.slice(1).join(" ");
   if (!Reason) return message.channel.send("You Need An Ammount To Give Them :D");
   if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
+  let Ammount = parseInt(args[1]);
        
 if(!coins[User.id]){
   coins[User.id] = {
@@ -82,7 +83,7 @@ let baseAmt = Math.floor(Math.random() * 1) + 1;
 
 if(coinAmt === baseAmt){
   coins[User.id] = {
-    coins: coins[User.id].coins + Reason
+    coins: coins[User.id].coins + Ammount
   };
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 if (err) console.log(err)
