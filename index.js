@@ -36,9 +36,8 @@ bot.on("message", async message => {
   };
 }
 
-    
+let cuser = message.mentions.members.first();
 let lCoins = coins[message.author.id].coins;
-let cuser = message.mentions.member.first();
 let uCoins = coins[cuser.id].coins;
 
 let normalCoins = new Discord.RichEmbed()
