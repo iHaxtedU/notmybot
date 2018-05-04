@@ -38,7 +38,6 @@ bot.on("message", async message => {
 
     
 let lCoins = coins[message.author.id].coins;
-let coinUser = message.mentions.members.first();
 let cuser = message.mentions.member.first();
 let uCoins = coins[cuser.id].coins;
 
