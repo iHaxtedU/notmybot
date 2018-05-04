@@ -249,4 +249,4 @@ fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
 
   });
 
-bot.login(process.env.botToken);
+bot.lo(process.env.botToken);
