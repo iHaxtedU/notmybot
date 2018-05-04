@@ -36,7 +36,7 @@ bot.on("message", async message => {
   };
 }
 
-let cuser = message.mentions.members.first();
+
 let lCoins = coins[message.author.id].coins;
 let uCoins = coins[cuser.id].coins;
 
@@ -56,8 +56,6 @@ let user1Coins = new Discord.RichEmbed()
 .setColor("#00FF00")
 .addField("The User Has", "∞ Tokens!");;
  
-if(!cuser){
-if (uCoins > 1000) return message.channel.send(unlimitedCoins);
 message.channel.send(normalCoins);
 }
   }    
