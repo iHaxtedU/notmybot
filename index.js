@@ -8,7 +8,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setActivity("All My Users", {type: "WATCHING"});
+  bot.user.setActivity("All My Users!", {type: "WATCHING"});
 
   //bot.user.setGame("on SourceCade!");
 });
@@ -27,6 +27,52 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
+  
+  if(cmd === `${prefix}tokens`){
+    const fs = require("fs");
+    if(!coins[message.author.id]){
+  coins[message.author.id] = {
+    coins: 0
+  };
+}
+
+let cCoins = coins[message.author.id].coins;
+let ccEmbed = new Discord.RichEmbed()
+.setColor("#00FF00")
+.addField("You Have", `${cCoins} Tokens.`);
+
+    
+let cuser = message.mentions.users.first();
+if (!cuser) return message.channel.send(ccEmbed)
+let uCoins = coins[cuser.id].coins;
+
+let coinEmbed = new Discord.RichEmbed()
+.setAuthor(message.author.username)
+.setColor("00FF00")
+.addField("Here's The Information You Requested.", `The User Has ${uCoins} Tokens!`);
+
+message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
+}
+
+  if(cmd === `${prefix}pingme`){
+    message.channel.send("Pong");
+    }
+  
+     if(cmd === `${prefix}givetokens`){
+  let adminRole = message.guild.roles.find("name", "gay role");
+  if(message.member.roles.has(adminRole){
+  let coins = require("./Tokens.json")
+  let User = message.mentions.users.first();
+  if(!User) return message.channel.send("Can't Find User!");
+  let Reason = parseInt(args[1]);
+  if (!Reason) return message.channel.send("You Need An Ammount To Give Them :D");
+  if (isNaN(Reason)) return message.channel.send("Use Numbers Dipshit");
+       
+if(!coins[User.id]){
+  coins[User.id] = {
+    coins: 0
+  };
+}
 
 let coinAmt = Math.floor(Math.random() * 1) + 1;
 let baseAmt = Math.floor(Math.random() * 1) + 1;
@@ -47,8 +93,6 @@ let coinEmbed = new Discord.RichEmbed()
 message.channel.send(coinEmbed).then(msg => {msg.delete(5000)});
 }
 }
-     }
-
        if(cmd === `${prefix}taketokens`){
   let coins = require("./Tokens.json")
   let qUser = message.mentions.users.first();
@@ -165,6 +209,7 @@ message.author.send(`Here is the current coin file`, {
   let sickEmbed = new Discord.RichEmbed()
   .setColor("#00FF00")
   .addField("You Need A Token", "You Need 1 Token");
+  message.delete(0)
 
 
   let newEmbed = new Discord.RichEmbed()
@@ -176,8 +221,6 @@ message.author.send(`Here is the current coin file`, {
   if(sCoins < 1) return message.channel.send(sickEmbed).then(msg => {msg.delete(5000)})
 
   message.delete()
-    
-    message.author.send("Your File Will Be Obfuscated In A Short Time");
 
     message.guild.channels.find("name", "obfuscate").send(newEmbed);
 
@@ -185,6 +228,7 @@ message.author.send(`Here is the current coin file`, {
       coins: sCoins - 1
     }
 
+message.delete()
 
 fs.writeFile("./Tokens.json", JSON.stringify(coins), (err) => {
     if(err) cosole.log(err)
