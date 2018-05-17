@@ -40,7 +40,7 @@ if(!coins[message.author.id]){
     coins: 0
   };
 }
-})
+)}
 
 
   let prefix = botconfig.prefix;
