@@ -40,7 +40,6 @@ if(!coins[message.author.id]){
     coins: 0
   };
 }
-  )
 
 
 
